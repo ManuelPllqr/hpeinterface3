@@ -19,6 +19,7 @@
   <component name="ProjectId" id="1OnEpZMVNgWYk2GvqnnEJw5VSjV" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -61,10 +62,28 @@
       <workItem from="1564605622808" duration="1443000" />
       <workItem from="1564664030569" duration="534000" />
       <workItem from="1565181909633" duration="4169000" />
+      <workItem from="1565334701805" duration="793000" />
+      <workItem from="1565335691616" duration="718000" />
+      <workItem from="1565336534201" duration="2334000" />
+      <workItem from="1565341128877" duration="202000" />
+      <workItem from="1565346303452" duration="922000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

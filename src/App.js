@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { Box, Select, Button, CheckBox, Collapsible, Heading, Grommet, Layer, ResponsiveContext, Image, Text, DataTable, Meter, FormField, Anchor, RangeInput, Chart} from 'grommet';
 import { FormClose, Notification, Facebook, } from 'grommet-icons';
 import { hpe } from 'grommet-theme-hpe';
-
+{/*import libraries above*/}
 
 const AppBar = (props) => (
     <Box
@@ -28,7 +28,7 @@ function Example() {
   );
 }
 
-
+{/*sets theme and HPE color id*/}
 const theme = {
   global: {
     colors: {
@@ -43,6 +43,7 @@ const theme = {
 };
 
 
+
 class App extends React.Component {
   constructor(){
     super();
@@ -54,28 +55,28 @@ class App extends React.Component {
 
     return (
 
-        <Grommet theme={hpe} full>
+        <Grommet theme={hpe} full>{/*sets HPE theme*/}
           <ResponsiveContext.Consumer>
             {size => (
                 <Box fill>
 
-                  <AppBar flex margin={{top: '5%'}} gap='30%' style={{height:'3%'}}>
+                  <AppBar flex margin={{top: '5%'}} gap='15%' style={{height:'3%'}}> {/*use % so the interface is compatible with different screen sizes*/}
                     <Image
                         style={{width: 100, height: 100}}
                         src='https://www.hpe.com/etc/designs/hpeweb/logo.jpg'
-                    />
+                    />{/*link to hpe logo*/}
                     <Heading level='3' color='#00b388' alignSelf='center' textAlign='center' >Predictive Maintenance -
                       Prescriptive</Heading>
                     <Image
                         style={{width: 50, height: 50}}
                         src='https://media.licdn.com/dms/image/C4D0BAQEZ2_r-IM1lRw/company-logo_200_200/0?e=2159024400&v=beta&t=cbDc9rSI649EBVMWOgbddgWmR4yItafGXzOL_t2TmdM'
-                    />
+                    /> {/*link to dataiku image link*/}
                   </AppBar>
 <Box>
                     <Text flex margin={{left:'1%',top: '3%'}}>Prescriptive View</Text>
 </Box>
 
-
+                    {/*first datatable, resizeable, search... are optional  */}
                   <DataTable style={{height:'40%'}} margin={{horizontal:'1%',top: '3%'}}
                              columns={[
                                {
@@ -152,6 +153,8 @@ class App extends React.Component {
                                },
 
                              ]}
+
+
                              data={[
                                {Installation: 1, Locality: 'Madrid', Equipment: 11, FailurePredicted: 'True', FailureProbability: '94.47%', ValidFrom: 22/11/2017, ValidTo: '29/11/2017', RUL: 15, Criticality: 'Medium', FailureCost: 5000, ShutdownCost: 1000, MaintenanceCost: 170, MaintenanceGain: 3880},
                                {Installation: 1, Locality: 'Barcelona', Equipment: 99, FailurePredicted: 'False', FailureProbability: '26.23%', ValidFrom: 22/11/2017, ValidTo: '29/11/2017', RUL: 21, Criticality:'Medium', FailureCost: 5000, ShutdownCost: 1000, MaintenanceCost: 170, MaintenanceGain: 3880},
@@ -165,15 +168,20 @@ class App extends React.Component {
                                {Installation: 1, Locality: 'Santender', Equipment: 93, FailurePredicted: 'False', FailureProbability: '0.60%', ValidFrom: 22/11/2017, ValidTo: '29/11/2017', RUL: 60, Criticality: 'High', FailureCost: 5000, ShutdownCost: 1000, MaintenanceCost: 300, MaintenanceGain: 3700},
 
                              ]}
+
                              sortable={true}
-                             resizeable={true}
+                             sortable={true}
                   />
+                    { /*the data of the datatable is filled in table above, all columns must be filled*/ }
+                    {/*sortable={true}  sorts elements from highest to lowest*/}
+                    {/*sortable={true} allows user to change column sizes*/}
 
                   <Box flex border={{ side:'top', color: '#00b388', size: 'xsmall' }} style={{ height: '65%'}}>
                     <br></br>
                     <Box margin={{horizontal:'42%'}}  style={{width: '20%', height: '20%'}}>
                       <Heading size="10px">Key variable of failure prediction</Heading>
 
+                        {/*select dropdown button with 5 select options*/}
                       <Select
                           style={{width: '20%', height: '20%'}}
                           options={['Option1', 'Option2', 'Option3', 'Option4', 'Option5']}
@@ -184,6 +192,7 @@ class App extends React.Component {
                     <br></br>
                     <br></br>
 
+                      {/*direction 'row' allows elements inside the box to be aligned horizontally, gap sets the gap between elements of the box*/}
                     <Box margin={{horizontal:'32%'}} direction='row' gap='88%'>
                       <Heading size="10px">Re-score Prediction</Heading>
                       <Heading size="10px">Re-score Probability</Heading>
@@ -208,6 +217,7 @@ class App extends React.Component {
                         <br></br>
                         <br></br>
 
+                          {/*first column with toggle buttons*/}
                         <Box  margin={{horizontal:'40px',top:'40px'}} direction='column'  style={{width: '80%', height: '60%'}} >
                           <Heading size="14px">Set to baseline</Heading><br></br>
                           <CheckBox toggle={true}/>
@@ -221,7 +231,7 @@ class App extends React.Component {
                           <br></br><br></br>
                           <CheckBox toggle={true}/>
                         </Box>
-
+                          {/*second column*/}
                         <Box margin={{horizontal:'40px',top:'40px'}} direction='column'  style={{width: '80%', height: '60%'}} >
                           <Heading size="14px">Variable Name</Heading><br></br>
                           <Text size="12px" margin={{horizontal:'0px'}}>vibration_range_7d</Text>
@@ -234,7 +244,7 @@ class App extends React.Component {
                           <br></br><br></br>
                           <Text size="12px" margin={{top:'8px'}}>count_of_past_erros</Text>
                         </Box>
-
+                          {/*third column*/}
                         <Box margin={{horizontal:'10%',top:'40px'}} direction='column'  style={{width: '80%', height: '60%'}} >
                           <Heading size="14px">Variable Weight</Heading>
                           <Text size="12px" margin={{top:'21px'}}>-0.200000000000</Text>
@@ -247,7 +257,7 @@ class App extends React.Component {
                           <br></br><br></br>
                           <Text size="12px" margin={{top:'10px'}}>-0.200000000000</Text>
                         </Box>
-
+                          {/*fourth column*/}
                         <Box margin={{horizontal:'40px',top:'40px'}} direction='column'  style={{width: '80%', height: '60%'}} >
                           <Heading size="14px">Variable Value</Heading>
                           <Text size="12px" margin={{top:'21px'}}>41.7651426121</Text>
@@ -261,7 +271,7 @@ class App extends React.Component {
                           <Text size="12px" margin={{top:'12px'}}>3</Text>
                           <br></br><br></br>
                         </Box>
-
+                          {/*fifth column*/}
                         <Box margin={{horizontal:'40px',top:'40px'}} direction='column' style={{width: '88%', height: '60%'}} >
                           <Heading size="14px">Variable Baseline</Heading>
                           <Text size="12px" margin={{top:'21px'}}>28.3119487292</Text>
@@ -276,6 +286,7 @@ class App extends React.Component {
 
                         </Box>
                       </Box>
+                        {/*last box where the Rescoring and Analytics buttons are present*/}
                           <Box direction='row'  style={{width: '88%', height: '60%'}} margin={{horizontal:'2%',top:'4%'}}>
                               <Button
                                   active={true}
